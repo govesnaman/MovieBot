@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie Bot</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="background">
+            <div class="transbox">
+                <h1 id='pop'>The Movie Guide</h1>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class='row'>
+            
+                <div class='col-sm-9 content'>
+                    <iframe src="trxy.html" height="100%" width="100%" id = 'siframe'>
+                        <p>Your browser does not support iframes.</p>
+                     </iframe>
+                </div>
+                <div class='col-sm-3'>
+                    <div class="headerBar">
+                        <h1 class="title">Chip</h1>
+                        <p class="title1">Don't worry! You've got my back</p> 
+                    </div>
+                    <div class="chatbox">
+                        <div class="chatlogs">
+                            <div class="chat friend" id="loadingGif" style="display: none;">
+                                <div class="user-photo"><img src="Images/ana.JPG"></div>
+                                <div class="gif"><img src="Images/loading.gif"></div>
+                            </div>
+                        </div>            
+                    </div>
+                    <div class="chat-form">
+                        <div id="inputDiv">
+                            <div id="buttonDiv"></div>
+                            <textarea class="input" name = 'exp' placeholder="Message" rows="1" data-min-rows='1'></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </form> -->
+        <script type="text/javascript" src="index.js"></script>  
+    </body>
+</html>
