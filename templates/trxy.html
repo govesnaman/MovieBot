@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ -->
+    <title>Adding HTML with Javascript</title>
+    <style>
+    	body{
+    		 overflow-y: scroll;
+     		 background-image: linear-gradient(gray, black);;
+    	}
+    	.wrr{
+    		display: flex;
+    		flex-wrap: wrap;
+    		margin-left: 50px;
+    		   
+
+    	}
+    	.xyz{
+    		margin: 10px;
+    		width: 180px;
+    		text-align: center;
+    		font-size: 20px;
+    		color: white;
+ 			transition: all 0.01s ease-in-out;
+   	    	}
+
+   	    .xyz:hover { 
+   	    	transform: scale(1.1);
+
+		}
+   	    img{
+   	    	border-radius: 10px;
+   	    	margin-bottom: 0px;
+
+   	    }
+   	    p{
+   	    	margin-top: 0px;
+   	    }
+   	    body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: gray;
+}
+   	    #myModal::-webkit-scrollbar{
+    width: 10px;
+}
+
+#myModal::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: gray;
+}
+#imgs{
+	height: 260px;
+	width: 180px;
+	   display: inline;
+	   margin: 10px 20px 0px 10px;
+	   float: right;
+
+}
+.title{
+	margin-left: 4%;
+	display: inline-flex;
+	margin-top: 6%;
+	flex-wrap: wrap;
+	max-width: 65%;
+	font-size: 4.5em;
+	font-family: 'Marck Script', cursive;
+}
+h4{
+	line-height: normal;
+}
+.modal-body{
+	font-size: 1.5em;
+}
+
+</style>
+</head>
+<body>
+	<div class = 'wrr'>
+	</div>
+	 <div class="modal " id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          	
+            <div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <p class="title">Modal Header</p>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<script type="text/javascript" src='try.js'></script> 	
+</body>
+</html>
