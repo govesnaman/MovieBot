@@ -3,7 +3,7 @@ var lastRecievedMessage = 1;
 var ButtonClicked = false;
 var DEFAULT_TIME_DELAY = 2000;
 var context = {};
-var type = {};
+var type = 'text';
 var msg = 'hello';
 
 // Variable for the chatlogs div
@@ -105,31 +105,41 @@ function send(text) {
 			url: baseUrl ,
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
-			data: JSON.stringify({ moviename: msg, context: context, type: type}),
+			data: JSON.stringify({ moviename: msg, type: type}),
 			success: function(data) 
 				{
 			    	//console.log(data);
-					savecontext(JSON.stringify(data.context,undefined,2));
-				
-						m = data.name1
-						n = data.sentiment_user
-						o = data.sentiment_bot
-						console.log(n)
-						m = m.join('<br/>')
-					
-						newRecievedMessage(m,n,o)
-
+					//savecontext(JSON.stringify(data.context,undefined,2));
 						if(data.type == 'movie')
 						{
-			
+							type = 'movie';
+						}
+						else if(data.type == 'text')
+							type  = 'text';
+						else
+							type = 'text';
+
+						m = data.name1
+						//n = data.sentiment_user
+						//o = data.sentiment_bot
+						console.log(m)
+						
+					
+						
+
+						if(data.type == 'movie1')
+						{	m = m.join('<br/>');
+							newRecievedMessage(m);
 							siframe = document.getElementById("siframe");
 							siframe.contentWindow.postMessage(data.name1, '*');
 						}
+						else
+							newRecievedMessage(m);
 
 				},
 			error: function()
 					{
-					newRecievedMessage("Internal Server Error","neutral");
+					newRecievedMessage("Internal Server Error");
 					}
 			});
 
@@ -147,14 +157,14 @@ function send(text) {
 // This message comes from the AJAX request sent to API.AI
 // This method tells which type of message is to be sent
 // Splits between the button messages, multi messages and single message
-function newRecievedMessage(messageText,usr,bot) {
+function newRecievedMessage(messageText) {
 	
 
 		showLoading();
 
 		// After 3 seconds call the createNewMessage function
 		setTimeout(function() {
-			createNewMessage(messageText,usr,bot);
+			createNewMessage(messageText);
 		}, DEFAULT_TIME_DELAY);
 	//}
 
@@ -163,7 +173,7 @@ function newRecievedMessage(messageText,usr,bot) {
 
 
 
-function createNewMessage(message,usr,bot) {
+function createNewMessage(message) {
 
 	// Hide the typing indicator
 	
@@ -180,9 +190,9 @@ function createNewMessage(message,usr,bot) {
 	$chatlogs.append(
 		$('<div/>', {'class': 'chat friend'}).append(
 			$('<div/>', {'class': 'user-photo'}).append($('<img src="Images/ana.JPG" />')), 
-			$('<p/>', {'class': 'chat-message'}).attr(("title"),bot).attr(("data-toggle"),"tooltip").append(message)));
+			$('<p/>', {'class': 'chat-message'}).attr(("data-toggle"),"tooltip").append(message)));
 
-	$('.self').last().attr(("title"),usr);
+	//$('.self').last().attr(("title"),usr); .attr(("title"),bot)
 
 	
 		/*console.log(message)*/
