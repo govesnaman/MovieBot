@@ -49,7 +49,7 @@ import ibm_watson
 
 assistant = ibm_watson.AssistantV1(
     version='2019-02-28',
-    iam_apikey='tt10Bkn5vJAodgYCX4GmsMpSM3xrr6cIjZW9NAQbYdy-',
+    iam_apikey='<insert_ibm_api_key>',
     url='https://gateway-lon.watsonplatform.net/assistant/api'
 )
 ++++++++++++++++

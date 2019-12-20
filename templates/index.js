@@ -122,7 +122,7 @@ function send(text) {
 						m = data.name1
 						//n = data.sentiment_user
 						//o = data.sentiment_bot
-						console.log(m)
+						console.log(data)
 						
 					
 						
@@ -139,7 +139,7 @@ function send(text) {
 				},
 			error: function()
 					{
-					newRecievedMessage("Internal Server Error");
+					newRecievedMessage("My servers are currently sleeping");
 					}
 			});
 

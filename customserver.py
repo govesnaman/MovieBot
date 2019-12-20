@@ -36,15 +36,13 @@ def hello():
 		except TypeError:
 			return jsonify(chatbot("Not in DB"))	
 
-		##return jsonify({"name1":"fuck yeah","type":"text"})
-
 def chatbot(l):
 	movie = ['movie', 'movies', 'films', 'film']
 	greet = ['hey','hello','hi','hii','hiii','heyy','heyo']
-	thank = ['thanks','thankyou', 'thank you','thenks','thank you']
+	thank = ['thanks','thankyou', 'thank you','thenks','thank you','thank','bye']
 
 	if(l == "Not in DB"):
-		return({"name1":"Not in DB","type":"text"})
+		return({"name1":"Sorry this movie is not in my database","type":"text"})
 
 	l = l.lower()
 	s = word_tokenize(l)
